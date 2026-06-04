@@ -1,0 +1,39 @@
+# Qt / qmake
+build/
+debug/
+release/
+Makefile
+Makefile.*
+*.pro.user
+*.qmake.stash
+
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Libraries
+*.a
+*.lib
+*.dll
+
+# IDE
+.vscode/
+.idea/
+*.user
+
+# PVS-Studio
+PVS-Studio.log
+*.plog
+
+# Dynamic analysis reports
+valgrind-report.txt
+drmemory-report.txt
+
+# OS
+.DS_Store
+Thumbs.db
