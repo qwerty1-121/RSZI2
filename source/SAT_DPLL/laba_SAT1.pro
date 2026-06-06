@@ -13,7 +13,8 @@ SOURCES += \
     boolequation.cpp \
     boolinterval.cpp \
     ../../external/Allocator/Allocator.cpp \
-    allocator_experiment/AllocatorTestObject.cpp
+    allocator_experiment/AllocatorTestObject.cpp \
+    allocator_experiment/AllocatorExperiment.cpp
 
 HEADERS += \
     BBV.h \
@@ -22,7 +23,8 @@ HEADERS += \
     NodeBoolTree.h \
     ../../external/Allocator/Allocator.h \
     ../../external/Allocator/DataTypes.h \
-    allocator_experiment/AllocatorTestObject.h
+    allocator_experiment/AllocatorTestObject.h \
+    allocator_experiment/AllocatorExperiment.h
 
 INCLUDEPATH += \
     ../../external/Allocator \
