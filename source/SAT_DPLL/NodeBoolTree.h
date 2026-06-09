@@ -1,22 +1,23 @@
 #ifndef NODEBOOLTREE_H
 #define NODEBOOLTREE_H
 
+#include "Allocator.h"
 #include "BBV.h"
 #include "boolinterval.h"
 #include "boolequation.h"
 
 class NodeBoolTree
 {
-public:
-    NodeBoolTree(BoolEquation *equation){this->eq = equation;}
-    NodeBoolTree(const NodeBoolTree &node){
-        this->eq = node.eq;
-        this->lt = node.lt;
-        this->rt = node.rt;}
-    
-	NodeBoolTree *lt = nullptr, *rt = nullptr;
+    DECLARE_ALLOCATOR
 
-	BoolEquation *eq;
+public:
+    explicit NodeBoolTree(BoolEquation *equation);
+    NodeBoolTree(const NodeBoolTree &node);
+
+    NodeBoolTree *lt = nullptr;
+    NodeBoolTree *rt = nullptr;
+
+    BoolEquation *eq = nullptr;
 };
 
 #endif // NODEBOOLTREE_H

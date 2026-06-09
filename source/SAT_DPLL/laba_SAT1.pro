@@ -12,6 +12,7 @@ SOURCES += \
     BBV.cpp \
     boolequation.cpp \
     boolinterval.cpp \
+    NodeBoolTree.cpp \
     ../../external/Allocator/Allocator.cpp \
     allocator_experiment/AllocatorTestObject.cpp \
     allocator_experiment/AllocatorExperiment.cpp
