@@ -15,7 +15,9 @@ SOURCES += \
     NodeBoolTree.cpp \
     ../../external/Allocator/Allocator.cpp \
     allocator_experiment/AllocatorTestObject.cpp \
-    allocator_experiment/AllocatorExperiment.cpp
+    allocator_experiment/AllocatorExperiment.cpp \
+    variable_selection/FirstVariableSelector.cpp \
+    variable_selection/MinUndefinedSelector.cpp
 
 HEADERS += \
     BBV.h \
@@ -25,8 +27,12 @@ HEADERS += \
     ../../external/Allocator/Allocator.h \
     ../../external/Allocator/DataTypes.h \
     allocator_experiment/AllocatorTestObject.h \
-    allocator_experiment/AllocatorExperiment.h
+    allocator_experiment/AllocatorExperiment.h \
+    variable_selection/IVariableSelector.h \
+    variable_selection/FirstVariableSelector.h \
+    variable_selection/MinUndefinedSelector.h
 
 INCLUDEPATH += \
     ../../external/Allocator \
-    allocator_experiment
+    allocator_experiment \
+    variable_selection
