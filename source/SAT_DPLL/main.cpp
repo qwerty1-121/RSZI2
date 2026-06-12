@@ -11,7 +11,9 @@
 #include "boolequation.h"
 #include "BBV.h"
 #include "AllocatorExperiment.h"
+#include "IVariableSelector.h"
 #include "MinUndefinedSelector.h"
+#include "FirstVariableSelector.h"
 
 
 int main(int argc, char *argv[])
@@ -71,7 +73,14 @@ int main(int argc, char *argv[])
 
         BoolInterval *root = new BoolInterval(vec, dnc);
 
-        MinUndefinedSelector variableSelector;
+        MinUndefinedSelector minUndefinedSelector;
+        FirstVariableSelector firstVariableSelector;
+
+        IVariableSelector *variableSelector = &minUndefinedSelector;
+
+        if (argc > 1 && std::strcmp(argv[1], "--selector=first") == 0) {
+            variableSelector = &firstVariableSelector;
+        }
 
         BoolEquation *boolequation = new BoolEquation(
             CNF,
@@ -79,7 +88,7 @@ int main(int argc, char *argv[])
             cnfSize,
             cnfSize,
             vec,
-            &variableSelector
+            variableSelector
         );
 
         bool rootIsFinded = false;
