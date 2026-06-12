@@ -11,6 +11,7 @@
 #include "boolequation.h"
 #include "BBV.h"
 #include "AllocatorExperiment.h"
+#include "MinUndefinedSelector.h"
 
 
 int main(int argc, char *argv[])
@@ -70,7 +71,16 @@ int main(int argc, char *argv[])
 
         BoolInterval *root = new BoolInterval(vec, dnc);
 
-        BoolEquation *boolequation = new BoolEquation(CNF, root, cnfSize, cnfSize, vec);
+        MinUndefinedSelector variableSelector;
+
+        BoolEquation *boolequation = new BoolEquation(
+            CNF,
+            root,
+            cnfSize,
+            cnfSize,
+            vec,
+            &variableSelector
+        );
 
         bool rootIsFinded = false;
         stack<NodeBoolTree *> BoolTree;
